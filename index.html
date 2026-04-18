@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>STELLAR ASSAULT — 20 NIVEAUX | Daniel_Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#00000a;overflow:hidden;font-family:'Orbitron',monospace}
+    #wrapper{position:relative;width:100vw;height:100vh}
+    #bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+    #gc{position:absolute;inset:0;z-index:1}
+    #gc canvas{position:absolute!important;top:0!important;left:0!important}
+    #ld{position:fixed;inset:0;background:#00000a;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99;transition:opacity .5s}
+    #ld h1{color:#00ffcc;font-size:clamp(22px,6vw,50px);letter-spacing:.2em;margin-bottom:24px}
+    #ld p{color:#555;font-size:clamp(11px,2.5vw,16px);margin-bottom:20px}
+    #ld .credit{color:#333;font-size:clamp(9px,1.8vw,13px);margin-top:14px;letter-spacing:.15em}
+    .lb{width:220px;height:4px;background:#111;border-radius:2px;overflow:hidden}
+    .lf{height:100%;background:linear-gradient(90deg,#00ffcc,#0055ff);animation:ld 1.4s ease forwards}
+    @keyframes ld{from{width:0}to{width:100%}}
+  </style>
+</head>
+<body>
+
+<div id="ld">
+  <h1>STELLAR ASSAULT</h1>
+  <p>20 NIVEAUX · 6 TYPES DE BOSS</p>
+  <div class="lb"><div class="lf"></div></div>
+  <p class="credit">Développé par Daniel_Tech</p>
+</div>
+
+<div id="wrapper">
+  <canvas id="bg"></canvas>
+  <div id="gc"></div>
+</div>
+
+<!-- ── LIBRAIRIES ── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script>
+
+<!-- ── DONNÉES ── -->
+<script src="js/levels.js"></script>
+<script src="js/textures.js"></script>
+
+<!-- ── SCÈNES ── -->
+<script src="js/scenes/BootScene.js"></script>
+<script src="js/scenes/MenuScene.js"></script>
+<script src="js/scenes/GameScene.js"></script>
+<script src="js/scenes/GameOverScene.js"></script>
+<script src="js/scenes/VictoryScene.js"></script>
+
+<!-- ── INIT ── -->
+<script src="js/starfield.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
